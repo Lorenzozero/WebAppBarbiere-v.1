@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Control Panel</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-size: 20px;
+    }
+    .image-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .image-row img {
+      max-width: 200px;
+      max-height: 150px;
+      margin-right: 10px;
+    }
+    button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+	.description-container {
+      display: flex;
+      align-items: center;
+	  margin-bottom: 60px;
+    }
+     .replace-description-button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin-right: 30px;
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <h2>Select a Page:</h2>
+    <button onclick="selectCategory('index')">Index</button>
+    <button onclick="selectCategory('vision')">Vision</button>
+    <button onclick="selectCategory('staff')">Staff</button>
+    <button onclick="selectCategory('haircut')">Haircut</button>
+    <button onclick="selectCategory('beardcut')">Beardcut</button>
+    <button onclick="selectCategory('color')">Color</button>
+	<button onclick="selectCategory('HairTattoo')">HairTattoo</button>
+
+  </center>
+  
+  <div id="pageContent"></div>
+  <script>
+    let selectedCategory = 'index';
+
+const pagesData = {
+  index: {
+    title: 'Index Page',
+    images: [
+      'haircut.jpg',
+      'beardcut.jpg',
+      'color.jpg',
+      'HairTattoo.jpg'
+    ],
+  },
+  vision: {
+    title: 'Vision Page',
+    images: [
+      'staff2.jpg',
+    ],
+    descriptions: [
+      'descrizioneVision',
+    ]
+  },
+  staff: {
+    title: 'Staff Page',
+    images: [
+      'face1.jpg',
+      'face2.jpg'
+    ],
+    descriptions: [
+      "nomeStaff1",
+      "nomeCategoriaStaff1",
+      "nomeDescrizioneStaff1",
+      "nomeStaff2",
+      "nomeCategoriaStaff2",
+      "nomeDescrizioneStaff2",
+    ]
+  },
+  haircut: {
+    title: 'Haircut Page',
+    images: [
+      'haircut1.jpg',
+      'haircut2.jpg',
+      'haircut3.jpg',
+      'haircut4.jpg',
+      'haircut5.jpg',
+    ],
+    descriptions: [
+      "nomeTaglio1",
+      "prezzoTaglio1",
+      "nomeTaglio2",
+      "prezzoTaglio2",
+      "nomeTaglio3",
+      "prezzoTaglio3",
+      "nomeTaglio4",
+      "prezzoTaglio4",
+      "nomeTaglio5",
+      "prezzoTaglio5",
+    ]
+  },
+  beardcut: {
+    title: 'Beardcut Page',
+    images: [
+      'beardcut1.jpg',
+      'beardcut2.jpg',
+      'beardcut3.jpg',
+    ],
+    descriptions: [
+      "nomeStile1",
+      "prezzoStile1",
+      "nomeStile2",
+      "prezzoStile2",
+      "nomeStile3",
+      "prezzoStile3",
+    ]
+  },
+  color: {
+    title: 'Color Page',
+    images: [
+      'Haircolor1.jpg',
+      'Haircolor3.jpg',
+    ],
+    descriptions: [
+      "nomeColore1",
+      "prezzoColore1",
+      "nomeColore2",
+      "prezzoColore2",
+    ]
+  },
+  HairTattoo: {
+    title: 'HairTattoo Page',
+    images: [
+      'HairTattoo1.jpg',
+      'HairTattoo2.jpg',
+      'HairTattoo3.jpg',
+    ],
+    descriptions: [
+      'prezzoHairTattoo',
+    ],
+  },
+};
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function displayCategoryData(category) {
+  const pageContent = document.getElementById('pageContent');
+  const categoryData = pagesData[category];
+
+  // Pulisce il contenuto esistente
+  pageContent.innerHTML = '';
+
+  // Crea un titolo per la categoria
+  const categoryTitle = document.createElement('h2');
+  categoryTitle.textContent = categoryData.title;
+  pageContent.appendChild(categoryTitle);
+
+  // Aggiungi le immagini alla pagina
+  if (categoryData.images && categoryData.images.length > 0) {
+    categoryData.images.forEach((imageSrc, index) => {
+      const imageContainer = document.createElement('div');
+      imageContainer.className = 'image-row';
+
+      const image = document.createElement('img');
+      image.src = imageSrc;
+      imageContainer.appendChild(image);
+
+      const changeImageButton = document.createElement('button');
+      changeImageButton.textContent = 'Cambia Immagine';
+      changeImageButton.onclick = () => cambiaImmagine(index, category);
+      imageContainer.appendChild(changeImageButton);
+
+      pageContent.appendChild(imageContainer);
+    });
+  }
+
+  // Aggiungi eventuali descrizioni alla pagina
+  if (categoryData.descriptions && categoryData.descriptions.length > 0) {
+    categoryData.descriptions.forEach((description, index) => {
+      const descriptionContainer = document.createElement('div');
+      descriptionContainer.className = 'description-container';
+
+      const descriptionParagraph = document.createElement('p');
+      descriptionParagraph.textContent = description;
+      descriptionContainer.appendChild(descriptionParagraph);
+
+      const changeDescButton = document.createElement('button');
+      changeDescButton.textContent = 'Cambia Descrizione';
+      changeDescButton.onclick = () => cambiaDescrizione(index, category);
+      descriptionContainer.appendChild(changeDescButton);
+
+      pageContent.appendChild(descriptionContainer);
+    });
+  }
+}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function selectCategory(category) {
+  selectedCategory = category; // Imposta la categoria selezionata
+  displayCategoryData(selectedCategory); // Visualizza i contenuti della categoria selezionata
+}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function cambiaImmagine(index, category) {
+  const imageFileInput = document.createElement('input');
+  imageFileInput.type = 'file';
+  imageFileInput.addEventListener('change', function () {
+    // Quando un file viene selezionato, questa funzione verrà chiamata.
+    // Puoi accedere al file selezionato tramite "this.files[0]".
+    const selectedFile = this.files[0];
+
+    if (selectedFile) {
+      // Puoi eseguire qui le operazioni desiderate con il file selezionato.
+      console.log('File selezionato:', selectedFile.name);
+    }
+  });
+
+  // Simula il clic sull'input del file
+  imageFileInput.click();
+}
+/*/-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                - devo sistemare le funzioni   -cambiaImmagine (qua ho fatto in modo che vengono scelte dal file system pero devo capire come salvarle 
+				                                               nel file system del server e darli il nome della predente ed elliminare l immagine precedente)
+				                              -cambiadescrizione(qua devo fare una semplice query di modifica verso il record db giusto )
+			    - devo hostare il tutto in netfly o qualcosa di simile con funzione server-side forse scrivere api e usare dominio acquistato register)
+				- devo fare il db 
+				- devo fare in modo che in tutte le pagine le descrizioni vengono dal db le immagini nn serve visto che si usera sempre la stessa immagine 
+				  con lo stesso nome scrivo patch una volta e poi lavoro sul nome file
+				- implementare pulsante prenotazioni sulla barra sopra (da studiare), in modo che escono su una pagina admin con tipo un calendario con le ore libere
+				 e quelle occupate da appuntamenti con nome,numero telefono,email,servizio,ora studiare modo di avvisare cliente se appuntamento e annullato  */
+
+
+  </script>
+</body>
+</html>

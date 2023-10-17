@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diego's barber - Sede</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: white;
+            background-color: black;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+    .custom-button {
+        background-color: #333;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+        nav ul li {
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px; /* Regola l'altezza desiderata della mappa */
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>"Sede"</h1>
+        <nav>
+            <ul>
+                <li><a href="sede.html">Sede</a></li>
+                <li><a href="vision.html">Vision</a></li>
+                <li><a href="staff.html">Staff</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="map">
+            <center>
+            <h3 >Via Roma, 13, 35020 Codevigo PD</h3>
+            <div class="map-container">
+                <!-- Inserisci qui la mappa di Google Maps con l'API Key -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d175.50228711276552!2d12.102222353334595!3d45.26727104927188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x477ebfdc618ea205%3A0x66ebbd3ce8f94d28!2sVia%20Roma%2C%2035020%20Codevigo%20PD!3m2!1d45.267258399999996!2d12.102408299999999!5e0!3m2!1sit!2sit!4v1691069938343!5m2!1sit!2sit" width="350" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+		<br>
+		<br>
+		<center>
+        <button class="custom-button" onclick="window.location.href='index.html'">Torna alla Home</button>
+    </main>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Color Gallery</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+	    header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+		nav ul li {
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery-item {
+            width: 300px;
+            margin: 10px;
+        }
+        .gallery-item img {
+            max-width: 100%;
+            border: 5px solid white;
+        }
+		.custom-button {
+            background-color: #333;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header>
+		    <h1>Color Gallery</h1>
+
+        <nav>
+            <ul>
+                <li><a href="haircut.html">hair</a></li>
+                <li><a href="beardcut.html">beard</a></li>
+                <li><a href="HairTattoo.html">Tattoo</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="set">
+        <h2 id="nomeColore1">Ice</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="Haircolor1.jpg" alt="Haircolor 1">
+            </div>
+        </div>
+        <h2 id="prezzoColore1">80 &#x20AC;</h2>
+    </div>
+	<br>
+	<br>
+	<br>
+    <div class="set">
+        <h2 id="nomeColore3">Highlights</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="Haircolor3.jpg" alt="Haircolor3">
+            </div>
+        </div>
+        <h2 id="prezzoColore3">50 &#x20AC;</h2>
+    </div>
+
+    <!-- Aggiungi altri set con titoli, immagini e prezzi diversi -->
+    <br>
+    <br>
+    <button class="custom-button" onclick="window.location.href='index.html'">Torna alla Home</button>
+</body>
+</html>

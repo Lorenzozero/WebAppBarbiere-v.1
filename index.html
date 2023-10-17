@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Diego's barber</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: white;
+            background-color: black;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+.service {
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    border: 2px solid white;
+
+}
+
+
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .service img {
+            max-width: 100%;
+            display: inline-block;
+        }
+
+        .service h3 
+         {
+            font-size: 20px;
+            margin-top: 0px;
+            color: gray;
+        }
+
+        .call-button {
+            position: absolute;
+            top: 20%; /* Posizionato sotto il nav */
+            left: 10%;
+            transform: translateX(-50%);
+            color: white;
+            height: 8%; /* Altezza del pulsante */
+            width: 8%; /* Larghezza del pulsante */
+            padding: 2px; /* Ridotto padding */
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: 0.3em; /* Ridotta dimensione del font */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .call-icon {
+            font-size: 0.5em;
+            margin-right: 2px;
+        }
+
+        .call-button img {
+            max-width: 100%; /* Imposta la larghezza massima dell'immagine */
+            max-height: 100%; /* Imposta l'altezza massima dell'immagine */
+        }
+		.piva {
+  color: #333; /* Colore grigio scuro */
+}
+#consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+    </style>
+	
+</head>
+<body>
+    <header>
+        <h1>Diego's barber</h1>
+        <nav>
+            <ul>
+                <li><a href="sede.html">Sede</a></li>
+                <li><a href="vision.html">Vision</a></li>
+                <li><a href="staff.html">Staff</a></li>
+				<li><a href="profilo.php">Profilo</a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+	                    <a href="tel: +39 349 867 7859" class="call-button">
+					     <img src="chiama.jpg">
+                    </a>
+    <main>
+        <section id="services">
+            <h2>Servizi</h2>
+            <div class="services-container">
+                <div class="service">
+                    <a href="haircut.html">
+                        <img src="haircut.jpg">
+                        <h3>Haircut</h3>
+                    </a>
+                </div>
+                <div class="service">
+                    <a href="beardcut.html">
+                        <img src="beardcut.jpg">
+                        <h3>Beardcut</h3>
+                    </a>
+                </div>
+                <div class="service">
+                    <a href="color.html">
+                        <img src="color.jpg">
+                        <h3>Color</h3>
+                    </a>
+					                </div>
+
+				<div class="service">
+                    <a href="HairTattoo.html">
+                        <img src="HairTattoo.jpg">
+                        <h3>HairTattoo</h3>
+                    </a>
+
+        </section>
+		<div id="consent-banner">
+  <p>Il nostro sito raccoglie dati personali per migliorare l'esperienza dell'utente.</p>
+  <button id="accept-button">Accetto</button>
+</div>
+<script>
+  document.getElementById('accept-button').addEventListener('click', function() {
+    // Nascondi il banner quando l'utente accetta
+    var consentBanner = document.getElementById('consent-banner');
+    consentBanner.style.display = 'none';
+  });
+</script>
+
+    </main><a>
+	<center>
+<a class="piva">P.Iva: 04285450286</a></body>
+</html>
